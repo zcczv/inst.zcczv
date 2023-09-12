@@ -1,0 +1,16 @@
+import requests
+
+
+link = input("ادخل رابط المنشور")
+
+
+for i in range(1, 8001):
+
+    url = f"https://dev-createsitename.pantheonsite.io/L/W.php?link={link}/{i}"
+
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        print(f"تم إرسال المشاهدات بنجاح للرابط {link}")
+    else:
+        print(f"فشل في إرسال المشاهدات للرابط {link}")
